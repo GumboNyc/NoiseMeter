@@ -16,9 +16,17 @@ app.get('/', function(req, res) {
 
 // about page
 app.get('/NoiseChart', function(req, res) {
-    dataInterface.VolumesBetweenDates(0,0, function(data){
+  var now = Date.now();
+    dataInterface.VolumesBetweenDates(now - 60*60*1000,now, function(data){
     res.render('pages/NoiseChart', {data: data});
     });
+});
+
+app.get('/NoiseChart/Day', function(req, res) {
+  var now = Date.now();
+  dataInterface.VolumesBetweenDates(now - 24*60*60*1000,now, function(data){
+  res.render('pages/NoiseChart', {data: data});
+  });
 });
 
 app.listen(80);
