@@ -19,3 +19,4 @@ sleep 0.2
  ~/Programs/riz -t 2700 192.168.129.114
 sleep 0.2
  ~/Programs/riz -b 10 192.168.129.114
+sleep 5
