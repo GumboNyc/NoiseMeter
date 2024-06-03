@@ -11,7 +11,7 @@ module.exports = {
         endDate = Date.now();
       }
 
-      db.query(`SELECT * FROM noise_records where record_time > ${startDate/1000}  and record_time < ${endDate/1000}`, function(err, rows) {
+      db.query(`SELECT record_time, noise_level_mean, noise_level_median FROM noise_records where record_time > ${startDate/1000}  and record_time < ${endDate/1000}`, function(err, rows) {
         callback(rows);
       });
     }};

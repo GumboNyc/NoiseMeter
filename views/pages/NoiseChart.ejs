@@ -22,8 +22,12 @@
       type: 'line',
       data: {
         datasets: [{
-          label:'Noise Level',
+          label:'Noise Level Mean',
           data: rawData.map( d => ({x:d[0] * 1000, y:d[1]}))
+        },
+        {
+          label:'Noise Level Median',
+          data: rawData.map( d => ({x:d[0] * 1000, y:d[2]}))
         }]
       },
       options: {
